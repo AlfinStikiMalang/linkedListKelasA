@@ -30,38 +30,36 @@ class LinkedList{
         this.tail = null;
     }
     public void push(Node newNode){ // 5 orang
-       if(head == null && tail == null){ // empty linked list
-            head = newNode;
-            tail = newNode;
-        }else{ // non-empty linked list
-            tail.next     = newNode;
-            newNode.prev = tail;
-            tail          = newNode;
-        }
+      
     }
     public Node qpop(){ // 5 orang
-              Node temp = head;
-    head = head.next;
-                      // TODO: write the code, pop node (queue), return it
+   
         return null;
     }
     public Node spop(){ // 5 orang
-        // TODO: write the code, pop node (stack), return it
+             if(head != null){
+            Node i, temp;
+            if(head.next == null){
+                temp = head;
+                head = tail = null;                
+            } else{
+                i = head;
+                while(i.next != tail){
+                    i = i.next;
+                }
+                temp = tail;
+                tail = i;
+                tail.next = null;
+            } return temp;
+        } else {
+            System.out.println("List kosong..");
+            return null;
+        }        
+             // TODO: write the code, pop node (stack), return it
         return null;
     }
     public void insert(Node newNode, Node position){ // 6 orang
        
-           if(head==null){  
-                  head=newNode;  
-                  return;
-           }
-           
-           Node tempNode = head;
-           while(tempNode.next!=null){ 
-                                                           
-                  tempNode=tempNode.next; 
-           }
-           tempNode.next=newNode;  
     
     }
     public void delete(Node position){ // 6 orang
